@@ -6,7 +6,12 @@ option go_package="github.com/activezhao/sample_repo_0407/qq/ww/grpc-go/sample_m
 
 
 service Zhaoh0407aaa {
-    rpc SayHello123 (HelloRequest) returns (HelloReply);
+    // rpc SayHello123 (HelloRequest) returns (HelloReply);
+    rpc SayHello123 (HelloRequest) returns (HelloReply) {
+         option (google.api.http) = {
+             get: "/api/v1/hello"
+         };
+    };
 }
 
 
